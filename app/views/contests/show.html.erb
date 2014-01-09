@@ -46,12 +46,13 @@
 
 <div id="templates">
   <script type="text/template" class="comment">
-    <div class="row comment">
+    <div class="row comment" data-id="{ id }">
       <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&amp;text=[img]"></div>
-      <div class="small-9 large-10 columns">
+      <div class="small-6 large-7 columns">
         <b>{ username } (chose {side}):</b>
         <p>{comment}</p>
       </div>
+      <div class="small-3 large-2 columns"><a href="#" class="delete">Delete</a></div> 
      </div>
   </script>
 </div>

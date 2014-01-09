@@ -10,6 +10,18 @@
       var newHtml = $.render(commentTemplate, newComment);
       $root.append(newHtml);
     });
+
+    comments.on('delete', function (id) {
+      $root.find('[data-id=' + id + ']').remove();
+      console.log(id);
+    });
+
+    $root.on('click', '.delete', function (e) {
+      e.preventDefault(); 
+      var obj = $root.find('.row').data(id);
+      var id = obj.id;
+      comments.delete(id);
+    });
   };
 
 
