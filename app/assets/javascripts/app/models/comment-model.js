@@ -6,8 +6,11 @@
     $.observable(this);
 
     this.create = function (newComment) {
-      comments.push(newComment);
-      this.trigger('create', newComment);
+      var self = this;
+      $.post(g.contestCommentsUrl, newComment, function (){
+        comments.push(newComment);
+        self.trigger('create', newComment);
+      });
     };
 
     this.filterBySide =  function (side) {

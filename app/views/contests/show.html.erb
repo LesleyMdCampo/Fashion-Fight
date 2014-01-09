@@ -92,10 +92,7 @@
   // // // // // // // // // // // // // // //
   // Grab some comments that already exist! //
   // // // // // // // // // // // // // // //
-  var serverComments = [
-    { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
-    { username: 'ROBOT B', side: 'right', comment: 'YES' }
-  ];
+  var serverComments = <%= raw @contest.comments.to_json %>;
 
   // Add all initial comments
   contestComments.initializeWith(serverComments);
